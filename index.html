@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Bars Clays</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 360px;
+  padding: 20px;
+}
+
+.header {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.input-field {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.checkbox-container input {
+  margin-right: 8px;
+  margin-top: 3px;
+}
+
+.checkbox-container a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background-color: #fcd535;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  font-size: 14px;
+  color: #999;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #eee;
+}
+
+.divider::before {
+  margin-right: 10px;
+}
+
+.divider::after {
+  margin-left: 10px;
+}
+
+.btn-google {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #f0b90b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">Welcome to Bars Clays</div>
+
+  <div class="label">Email/Phone number</div>
+  <input type="text" class="input-field" placeholder="Email/Phone (without country code)">
+
+  <div class="checkbox-container">
+    <input type="checkbox" checked>
+    <div>
+      By creating an account, I agree to Bars Clays's 
+      <a href="#">Privacy Notice.</a>
+    </div>
+  </div>
+
+  <button class="btn-primary">Continue</button>
+
+  <div class="divider">or</div>
+
+  <button class="btn-google">
+    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="18">
+    Continue with Google
+  </button>
+
+  <div class="footer">
+    <a href="#">Sign up as an entity</a> or 
+    <a href="#">Log in</a>
+  </div>
+
+</div>
+
+</body>
+  </html>
