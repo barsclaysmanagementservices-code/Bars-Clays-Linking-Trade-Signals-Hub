@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bars Clays Secure Signup</title><style>*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);padding:20px}.card{width:100%;max-width:420px;padding:45px 35px;border-radius:18px;background:rgba(255,255,255,.08);backdrop-filter:blur(18px);box-shadow:0 25px 60px rgba(0,0,0,.35);color:#fff;transition:.5s}.logo{text-align:center;font-size:28px;font-weight:700;color:#ffd84d;margin-bottom:8px}.sub{text-align:center;opacity:.8;margin-bottom:28px}.field{position:relative;margin-bottom:22px}.field input{width:100%;padding:16px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;font-size:15px;outline:none}.field label{position:absolute;left:14px;top:16px;opacity:.7;font-size:14px;transition:.25s;background:transparent;padding:0 4px}.field input:focus+label,.field input:not(:placeholder-shown)+label{top:-8px;font-size:11px;opacity:.9;background:linear-gradient(135deg,#203a43,#2c5364)}.toggle{position:absolute;right:12px;top:16px;cursor:pointer;font-size:13px;opacity:.8}.btn{width:100%;padding:15px;border:none;border-radius:9px;background:#ffd84d;color:#000;font-weight:700;font-size:15px;cursor:pointer;transition:.3s}.btn:hover{transform:translateY(-2px)}.loading{display:none;text-align:center;margin-top:18px}.spin{width:28px;height:28px;border:3px solid rgba(255,255,255,.3);border-top:3px solid #ffd84d;border-radius:50%;margin:auto;animation:rot 1s linear infinite}@keyframes rot{to{transform:rotate(360deg)}}.success{display:none;text-align:center;animation:fade .7s forwards}.tick{font-size:64px;color:#4dff88;margin-bottom:12px;animation:pop .6s}.fadeout{animation:fadeout .5s forwards}@keyframes pop{0%{transform:scale(.2)}70%{transform:scale(1.2)}100%{transform:scale(1)}}@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}@keyframes fadeout{to{opacity:0;transform:scale(.96)}}@media(max-width:480px){.card{padding:38px 24px}}</style></head><body>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bars Clays Secure Signup</title><style>*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);padding:20px}.card{width:100%;max-width:420px;padding:45px 35px;border-radius:18px;background:rgba(255,255,255,.08);backdrop-filter:blur(18px);box-shadow:0 25px 60px rgba(0,0,0,.35);color:#fff;transition:.5s}.logo{text-align:center;font-size:28px;font-weight:700;color:#ffd84d;margin-bottom:8px}.sub{text-align:center;opacity:.8;margin-bottom:28px}.field{position:relative;margin-bottom:22px}.field input{width:100%;padding:16px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;font-size:15px;outline:none}.field label{position:absolute;left:14px;top:16px;opacity:.7;font-size:14px;transition:.25s;padding:0 4px}.field input:focus+label,.field input:not(:placeholder-shown)+label{top:-8px;font-size:11px;opacity:.9;background:linear-gradient(135deg,#203a43,#2c5364)}.toggle{position:absolute;right:12px;top:16px;cursor:pointer;font-size:13px;opacity:.8}.btn{width:100%;padding:15px;border:none;border-radius:9px;background:#ffd84d;color:#000;font-weight:700;font-size:15px;cursor:pointer}.loading{display:none;text-align:center;margin-top:18px}.spin{width:28px;height:28px;border:3px solid rgba(255,255,255,.3);border-top:3px solid #ffd84d;border-radius:50%;margin:auto;animation:rot 1s linear infinite}@keyframes rot{to{transform:rotate(360deg)}}.success{display:none;text-align:center;opacity:0;transform:translateY(20px)}.success.show{display:block;animation:fade .7s forwards}.tick{font-size:64px;color:#4dff88;margin-bottom:12px;animation:pop .6s}@keyframes pop{0%{transform:scale(.2)}70%{transform:scale(1.2)}100%{transform:scale(1)}}@keyframes fade{to{opacity:1;transform:none}}.fadeout{animation:fadeout .45s forwards}@keyframes fadeout{to{opacity:0;transform:scale(.96)}}@media(max-width:480px){.card{padding:38px 24px}}</style></head><body>
 
 <div class="card" id="formBox">
 <div class="logo">Bars Clays</div>
@@ -19,7 +19,7 @@
 <div class="field">
 <input required id="p" type="password" placeholder=" ">
 <label>Create password</label>
-<span class="toggle" onclick="t()">Show</span>
+<span class="toggle" onclick="togglePass()">Show</span>
 </div>
 
 <button class="btn">Create Secure Account</button>
@@ -39,18 +39,31 @@
 </div>
 
 <script>
-function t(){let p=document.getElementById("p");p.type=p.type==="password"?"text":"password"}
-document.getElementById("f").onsubmit=e=>{
+const form=document.getElementById("f");
+const load=document.getElementById("load");
+const formBox=document.getElementById("formBox");
+const ok=document.getElementById("ok");
+const pass=document.getElementById("p");
+
+function togglePass(){
+pass.type=pass.type==="password"?"text":"password";
+}
+
+form.addEventListener("submit",e=>{
 e.preventDefault();
-document.getElementById("load").style.display="block";
+load.style.display="block";
+
 setTimeout(()=>{
-document.getElementById("formBox").classList.add("fadeout");
+formBox.classList.add("fadeout");
+
 setTimeout(()=>{
 formBox.style.display="none";
-ok.style.display="block";
-},500);
-},1400);
-}
+ok.classList.add("show");   // THIS triggers animation properly
+},450);
+
+},1300);
+
+});
 </script>
 
 </body></html>
